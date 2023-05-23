@@ -12,38 +12,72 @@ class Rectangle:
         Initialization method for the Rectangle class
 
         Attributes:
-        width: Width of rectangle
-        height: Height of rectangle
+            width: Width of rectangle
+            height: Height of rectangle
         self.width = width
         self.height = height
         """
-        self.height = height
         self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     @property
     def width(self):
-        return self.__width
+        """
+        Property width to retrieve it
 
-    @property
-    def height(self):
-        return self.__height
+        Returns:
+            width: Width of rectangle
+        """
+        return self.__width
 
     @width.setter
     def width(self, value):
+        """
+        Setter width of the rectangle
+
+        Attributes:
+            width: Width of rectangle
+
+        Raises:
+            TypeError: If width is not an integer
+            ValueError: If width is less than 0
+        """
         if type(value) is not int:
             raise TypeError("width must be an integer")
-        if value < 0:
+        elif value < 0:
             raise ValueError("width must be >= 0")
-        self.__width = value
+        else:
+            self.__width = value
+
+    @property
+    def height(self):
+        """
+        Property height to retrieve it
+
+        Returns:
+            height: Height of rectangle
+        """
+        return self.__height
 
     @height.setter
     def height(self, value):
+        """
+        Setter height of the rectangle
+
+        Attributes:
+            height: height of rectangle
+
+        Raises:
+            TypeError: If height is not an integer
+            ValueError: If height is less than 0
+        """
         if type(value) is not int:
             raise TypeError("height must be an integer")
-        if value < 0:
+        elif value < 0:
             raise ValueError("height must be >= 0")
-        self.__height = value
+        else:
+            self.__height = value
 
     def area(self):
         """Return the area of the rectangle"""
