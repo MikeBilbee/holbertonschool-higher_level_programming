@@ -73,9 +73,5 @@ class Rectangle:
 
     def __del__(self):
         """Prints after deletion"""
-        print("Bye rectangle...")
-
-    def __del__(self):
-        """Prints after deletion"""
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
