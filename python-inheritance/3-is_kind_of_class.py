@@ -3,5 +3,5 @@
 
 
 def is_kind_of_class(obj, a_class):
-    """ Return: True if object has inherited from super class; Otherwise False """
+    """ Return: True if object inherited from super class; Otherwise False """
     return isinstance(obj, a_class)
