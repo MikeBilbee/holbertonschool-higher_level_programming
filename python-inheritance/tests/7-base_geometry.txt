@@ -1,0 +1,83 @@
+Import module
+=============
+::
+    >>> BaseGeo = __import__("7-base_geometry").BaseGeometry
+
+-----------------------------------------------------
+::
+
+Try area:
+	>>> a = BaseGeo()
+	>>> a.area()
+	Traceback (most recent call last):
+	Exception: area() is not implemented
+
+Try too many arguments for area:
+	>>> a.area(1)
+	Traceback (most recent call last):
+	TypeError: area() takes 1 positional argument but 2 were given
+
+Try integer is 0:
+	>>> a.integer_validator("integer", 0)
+	Traceback (most recent call last):
+	ValueError: integer must be greater than 0
+
+Try integer is < 0:
+	>>> a.integer_validator("integer", -1)
+	Traceback (most recent call last):
+	...
+	ValueError: integer must be greater than 0
+
+Try no argument:
+	>>> a.integer_validator()
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Try 1 argument to integer_validatord:
+	>>> a.integer_validator("integer")
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Checking for too many arguments:
+	 >>> a.integer_validator("integer", 1, 2)
+	 Traceback (most recent call last):
+         ...
+	 TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+Try good case:
+	>>> a.integer_validator("integer", 98)
+	>>> a.integer_validator("width", 98)
+	>>> a.integer_validator("age", 1)
+	>>> a.integer_validator(1, 1)
+
+Checking for mod docstring:
+	>>> m = __import__("7-base_geometry").__doc__
+    >>> len(m) > 1
+    True
+
+Checking for class docstring:
+	>>> c = __import__("7-base_geometry").BaseGeometry.__doc__
+	>>> len(c) > 1
+	True
+
+	>>> docs = __import__("7-base_geometry").BaseGeometry.area.__doc__
+	>>> len(docs) > 1
+	True
+
+
+Try type errors:
+	>>> a.integer_validator("string", "hello")
+	Traceback (most recent call last):
+	TypeError: string must be an integer
+
+	>>> a.integer_validator("tuple", (1, 2))
+	Traceback (most recent call last):
+	TypeError: tuple must be an integer
+
+	>>> a.integer_validator("list", [1, 2, 3])
+	Traceback (most recent call last):
+	TypeError: list must be an integer
+
+	>>> a.integer_validator("bool", True)
+	Traceback (most recent call last):
+	TypeError: bool must be an integer
