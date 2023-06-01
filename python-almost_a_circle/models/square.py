@@ -12,7 +12,5 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        parts = [type(self).__name__, self.id, self.x,
-                 self.y, self.size]
-        res = "[{0}] ({1}) {2}/{3} - {4}".format(*parts)
-        return res
+        return f"[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y}\
+ - {self.width}"
