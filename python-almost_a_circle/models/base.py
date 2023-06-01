@@ -38,6 +38,6 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """ Returns JSOn string json-string """
-        if json_string is None:
-            json_string = []
-        return json.dumps(json_string)
+        if json_string is None or len(json_string) < 1:
+            return []
+        return json.loads(json_string)
