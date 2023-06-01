@@ -13,6 +13,6 @@ class Square(Rectangle):
 
     def __str__(self):
         parts = [type(self).__name__, self.id, self.x,
-                 self.y, self.size, self.size]
-        res = "[{0}] ({1}) {2}/{3} - {4}/{5}".format(*parts)
+                 self.y, self.size]
+        res = "[{0}] ({1}) {2}/{3} - {4}".format(*parts)
         return res
