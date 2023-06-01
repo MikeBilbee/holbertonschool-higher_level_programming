@@ -34,3 +34,10 @@ class Base:
             else:
                 jstring = [i.to_dictionary() for i in list_objs]
                 file.write(Base.to_json_string(jstring))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ Returns JSOn string json-string """
+        if json_string is None:
+            json_string = []
+        return json.dumps(json_string)
