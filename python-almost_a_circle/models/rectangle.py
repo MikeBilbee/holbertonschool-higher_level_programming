@@ -87,3 +87,7 @@ class Rectangle(Base):
             print()
         for j in range(self.height):
             print("{}{}".format(" " * self.x, "#" * self.width))
+
+    def __str__(self):
+        return f"[{self.__class__.__name__}] ({self.id}) {self.__x}/{self.__y}\
+- {self.__width}/{self.__height}"
