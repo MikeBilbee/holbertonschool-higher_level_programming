@@ -94,13 +94,12 @@ class Rectangle(Base):
         res = "[{0}] ({1}) {2}/{3} - {4}/{5}".format(*parts)
         return res
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ Updates self """
-        try:
-            self.id = args[0] or self.id
-            self.width = args[1] or self.width
-            self.height = args[2] or self.height
-            self.x = args[3] or self.x
-            self.y = args[4] or self.y
-        except IndexError:
-            return
+        attrs, i = ['id', 'width', 'height', 'x', 'y'], 0
+        if args:
+            for value in args:
+                setattr(self, attrs[i], value)
+                i += 1
+        for key, value in kwargs.items():
+            setattr(self, key, value)
