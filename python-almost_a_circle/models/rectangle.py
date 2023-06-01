@@ -54,3 +54,25 @@ class Rectangle(Base):
         self.x = self.xy_validator("x", x)
         self.y = self.xy_validator("y", y)
         super().__init__(id)
+
+    def hw_validator(self, name, value):
+        """
+        Raises: TypeError if Value is not int
+                ValueError if value <=0
+        """
+        if type(value) is not int:
+            raise TypeError("{:s} must be an integer".format(name))
+        if value < 1:
+            raise ValueError("{:s} must be > 0".format(name))
+        return value
+
+    def xy_validator(self, name, value):
+        """
+        Raises: TypeError if Value is not int
+                ValueError if value <=0
+        """
+        if type(value) is not int:
+            raise TypeError("{:s} must be an integer".format(name))
+        if value < 0:
+            raise ValueError("{:s} must be >= 0".format(name))
+        return value
