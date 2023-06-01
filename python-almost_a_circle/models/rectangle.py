@@ -89,5 +89,7 @@ class Rectangle(Base):
             print("{}{}".format(" " * self.x, "#" * self.width))
 
     def __str__(self):
-        return f"[{self.__class__.__name__}] ({self.id}) {self.__x}/{self.__y}\
-- {self.__width}/{self.__height}"
+        parts = [type(self).__name__, self.id, self.x,
+                 self.y, self.width, self.height]
+        res = "[{0}] ({1}) {2}/{3} - {4}/{5}".format(*parts)
+        return res
