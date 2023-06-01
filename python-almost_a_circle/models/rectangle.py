@@ -24,33 +24,31 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
+        """ height setter """
         self.__height = self.hw_validator("height", value)
 
     @property
     def x(self):
-        """x getter
-        """
+        """ x getter """
         return self.__x
 
     @x.setter
     def x(self, value):
-        """x setter
-        """
+        """x setter """
         self.__x = self.xy_validator("x", value)
 
     @property
     def y(self):
-        """y getter
-        """
+        """ y getter """
         return self.__y
 
     @y.setter
     def y(self, value):
-        """y setter
-        """
+        """ y setter """
         self.__y = self.xy_validator("y", value)
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """ Init method """
         self.width = self.hw_validator("width", width)
         self.height = self.hw_validator("height", height)
         self.x = self.xy_validator("x", x)
