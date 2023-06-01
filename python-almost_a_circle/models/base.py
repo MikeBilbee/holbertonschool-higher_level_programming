@@ -19,6 +19,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """ Returns JSON list of of all dictionaries """
-        jsonString = json.dump(list_dictionaries)
-        return jsonString
+        if list_dictionaries is None:
+            list_dictionaries = []
+        return json.dumps(list_dictionaries)
 
