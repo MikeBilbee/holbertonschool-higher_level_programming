@@ -80,3 +80,6 @@ class Rectangle(Base):
     def area(self):
         """ initializes area """
         return self.__width * self.__height
+
+    def display(self):
+        print(self, "#")
