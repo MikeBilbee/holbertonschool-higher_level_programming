@@ -12,14 +12,10 @@ import os
 
 
 class TestBaseClass(unittest.TestCase):
-    """
-    Test Base Class
-    """
+    """ Test Base Class """
 
     def test_pep8_base(self):
-        """
-        Test that models/base.py is pep8 compliant.
-        """
+        """ Test that models/base.py is pep8 compliant. """
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/base.py'])
         self.assertEqual(result.total_errors, 0,
@@ -46,9 +42,7 @@ class TestBaseClass(unittest.TestCase):
         self.assertTrue(len(Base.__doc__) >= 1)
 
     def test_func_docstrings(self):
-        """
-        Tests for the presence of docstrings in all functions
-        """
+        """ Tests for the presence of docstrings in all functions """
         self.assertTrue(len(Base.__init__.__doc__) >= 1)
         self.assertTrue(len(Base.to_json_string.__doc__) >= 1)
         self.assertTrue(len(Base.from_json_string.__doc__) >= 1)
@@ -57,7 +51,7 @@ class TestBaseClass(unittest.TestCase):
         self.assertTrue(len(Base.load_from_file.__doc__) >= 1)
 
     def test_to_json_string(self):
-        """Tests regular to json string"""
+        """ Tests regular to json string """
         Base._Base__nb_objects = 0
         d1 = {"id": 98, "width": 5, "height": 6, "x": 7, "y": 8}
         d2 = {"id": 2, "width": 2, "height": 3, "x": 4, "y": 0}
@@ -67,17 +61,17 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(d, [d1, d2])
 
     def test_empty_to_json_string(self):
-        """Test for passing empty list/ None"""
+        """ Test for passing empty list/ None """
         json_s = Base.to_json_string([])
         self.assertTrue(type(json_s) is str)
         self.assertEqual(json_s, "[]")
 
     def test_fjs_empty(self):
-        """Tests from_json_string with an empty string"""
+        """ Tests from_json_string with an empty string """
         self.assertEqual([], Base.from_json_string(""))
 
     def test_fjs_None(self):
-        """Tests from_json_string with an empty string"""
+        """ Tests from_json_string with an empty string """
         self.assertEqual([], Base.from_json_string(None))
 
     def test_None_to_json_String(self):
@@ -86,7 +80,7 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(json_s, "[]")
 
     def test_from_json_string(self):
-        """Tests regular from_json_string"""
+        """ Tests regular from_json_string """
         json_str = '[{"id": 98, "width": 5, "height": 6, "x": 7, "y": 8}, \
 {"id": 2, "width": 2, "height": 3, "x": 4, "y": 0}]'
         json_l = Base.from_json_string(json_str)
@@ -115,14 +109,12 @@ class NewTest(unittest.TestCase):
         self.assertEqual(b2.id, 2)
 
     def test_too_many_args(self):
-        """
-        test too many args to init
-        """
+        """ test too many args to init """
         with self.assertRaises(TypeError):
             b = Base(1, 1)
 
     def test_nb_private(self):
-        """Tests nb_objects as a private instance attribute"""
+        """ Tests nb_objects as a private instance attribute """
         b = Base(3)
         with self.assertRaises(AttributeError):
             print(b.nb_objects)
@@ -163,11 +155,11 @@ class NewTest(unittest.TestCase):
 
 
 class TestBase_save_to_file(unittest.TestCase):
-    """Unittests for testing save_to_file method of Base class."""
+    """ Unittests for testing save_to_file method of Base class. """
 
     @classmethod
     def tearDown(self):
-        """Delete any created files."""
+        """ Delete any created files. """
         try:
             os.remove("Rectangle.json")
         except Exception:
