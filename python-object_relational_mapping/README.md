@@ -23,3 +23,7 @@ This repository contains all the files for the Holberton Object Relational Mappi
 | 12. Update a state | [12-model_state_update_id_2.py](https://github.com/MikeBilbee/holbertonschool-higher_level_programming/blob/main/python-object_relational_mapping/12-model_state_update_id_2.py) | Changes the name of a State object |
 | 13. Delete states | [13-model_state_delete_a.py](https://github.com/MikeBilbee/holbertonschool-higher_level_programming/blob/main/python-object_relational_mapping/13-model_state_delete_a.py) | Deletes all State objects with a name containing the letter "a" |
 | 14. Cities in state | [model_city.py](https://github.com/MikeBilbee/holbertonschool-higher_level_programming/blob/main/python-object_relational_mapping/model_city.py), [14-model_city_fetch_by_state.py](https://github.com/MikeBilbee/holbertonschool-higher_level_programming/blob/main/python-object_relational_mapping/14-model_city_fetch_by_state.py) | model_city.py contains the class definition of a City, 14-model_city_fetch_by_state.py prints all City objects |
+
+---
+
+More from me : [MikeBilbee](https://github.com/MikeBilbee)
