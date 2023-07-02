@@ -1,8 +1,6 @@
 #!/usr/bin/python3
-""" 
-Deletes all States with a name containing the letter a 
+""" Deletes all State objects with a name containing the letter a
 """
-
 import sys
 from model_state import Base, State
 from model_city import City
