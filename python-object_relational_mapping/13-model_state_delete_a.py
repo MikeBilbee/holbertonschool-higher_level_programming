@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ 
-Deletes all State with a name containing the letter a 
+Deletes all States with a name containing the letter a 
 """
 
 import sys
