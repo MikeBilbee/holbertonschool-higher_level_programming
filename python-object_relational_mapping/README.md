@@ -8,7 +8,7 @@ This repository contains all the files for the Holberton Object Relational Mappi
 
 | Tasks | Files | Description |
 | ----- | ----- | ------ |
-| 0: Get all states | [0-select_states.py]() | Lists all states |
+| 0: Get all states | [0-select_states.py](https://github.com/MikeBilbee/holbertonschool-higher_level_programming/blob/main/python-object_relational_mapping/0-select_states.py) | Lists all states |
 | 1: Filter states | [1-filter_states.py]() | Lists all states with names starting with "N" |
 | 2: Filter states by user input | [2-my_filter_states.py]() | Displays all values in the states table where name matches the argument |
 | 3. SQL Injection... | [3-my_safe_filter_states.py]() | Same as 2. but same from SQL injections |
