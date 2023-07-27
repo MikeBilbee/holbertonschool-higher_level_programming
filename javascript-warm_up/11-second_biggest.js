@@ -1,30 +1,20 @@
 #!/usr/bin/node
 
-const findSecondBiggest = (args) => {
-  if (args.length <= 1) {
-    return 0;
-  }
+const args = process.argv.slice(2).map(Number);
 
-  let largest = parseInt(args[2]);
-  let secondLargest = parseInt(args[3]);
+if (args.length === 0 || args.length === 1) {
+  console.log(0);
+} else {
+  let max = -Infinity;
+  let secondMax = -Infinity;
 
-  if (largest < secondLargest) {
-    [largest, secondLargest] = [secondLargest, largest];
-  }
-
-  for (let i = 4; i < args.length; i++) {
-    const num = parseInt(args[i]);
-    if (num > largest) {
-      secondLargest = largest;
-      largest = num;
-    } else if (num > secondLargest && num !== largest) {
-      secondLargest = num;
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] > max) {
+      secondMax = max;
+      max = args[i];
+    } else if (args[i] > secondMax && args[i] < max) {
+      secondMax = args[i];
     }
   }
-
-  return secondLargest;
-};
-
-const args = process.argv;
-const result = findSecondBiggest(args);
-console.log(result);
+  console.log(secondMax);
+}
