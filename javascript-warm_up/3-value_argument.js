@@ -1,14 +1,9 @@
 #!/usr/bin/node
 
-const firstArg = (...args) => {
-  const arrayLength = args.length;
-  if (arrayLength === 0) {
-    console.log('No argument');
-  } else if (arrayLength === 1) {
-    console.log(args[0]);
-  } else {
-    console.log('Too many arguments');
-  }
-};
+const argsText = process.argv.slice(2);
 
-firstArg();
+if (argsText[0]) {
+  console.log(argsText[0]);
+} else {
+  console.log('No argument');
+}
