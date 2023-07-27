@@ -10,6 +10,4 @@ const arg2 = parseInt(process.argv[3]);
 if (!Number.isNaN(arg1) && !Number.isNaN(arg2)) {
   const result = add(arg1, arg2);
   console.log(result);
-} else {
-  console.log('Invalid input. Please provide two integers.');
 }
