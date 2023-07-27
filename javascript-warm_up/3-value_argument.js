@@ -1,10 +1,13 @@
 #!/usr/bin/node
 
 const firstArg = (...args) => {
-  if (args.length === 0) {
+  const arrayLength = args.length;
+  if (arrayLength === 0) {
     console.log('No argument');
-  } else {
+  } else if (arrayLength === 1) {
     console.log(args[0]);
+  } else {
+    console.log('Too many arguments');
   }
 };
 
