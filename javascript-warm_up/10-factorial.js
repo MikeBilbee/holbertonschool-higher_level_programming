@@ -8,7 +8,7 @@ function factorial (n) {
   } else {
     return n * factorial(n - 1);
   }
-};
+}
 
 const n = parseInt(process.argv[2]);
 console.log(factorial(n));
