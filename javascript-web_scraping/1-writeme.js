@@ -1,17 +1,13 @@
 #!/usr/bin/node
 
-const request = require('request');
+const fileServer = require('fs');
 
-const url = process.argv[2];
+const file = process.argv[2];
 
-function getStatusCode (url) {
-  request(url, (error, response) => {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log(`code: ${response.statusCode}`);
-    }
-  });
-}
+const fileContent = process.argv[3];
 
-getStatusCode(url);
+fileServer.writeFile(file, fileContent, 'utf-8', function (error, content) {
+  if (error) {
+    console.error(error);
+  }
+});
