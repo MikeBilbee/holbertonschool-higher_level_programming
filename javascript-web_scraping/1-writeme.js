@@ -4,14 +4,14 @@ const request = require('request');
 
 const url = process.argv[2];
 
-if (!url) {
-  console.error('Please provide a URL to request as an argument.');
-} else {
-  request.get(url, (error, response) => {
+function getStatusCode (url) {
+  request(url, (error, response) => {
     if (error) {
-      console.error('Error occurred:', error);
+      console.log(error);
     } else {
-      console.log('code:', response.statusCode);
+      console.log(`code: ${response.statusCode}`);
     }
   });
 }
+
+getStatusCode(url);
